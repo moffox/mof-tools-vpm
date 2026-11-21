@@ -65,7 +65,7 @@ if (Test-Path -LiteralPath $recordsRoot) {
     }
 }
 $source['packages'] = $packages
-$repositoryAuthor = [string]$source.author.email
+$repositoryAuthor = [string]$source.author.name
 $source['author'] = $repositoryAuthor
 $docs = Join-Path $listingRoot 'docs'
 New-Item -ItemType Directory -Path $docs -Force | Out-Null
