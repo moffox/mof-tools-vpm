@@ -2,11 +2,7 @@
     "name":  "MofTools",
     "id":  "dev.moftools.vpm",
     "url":  "https://moffox.github.io/mof-tools-vpm/index.json",
-    "author":  {
-                   "name":  "MofTools",
-                   "email":  "github-moffox@outlook.jp",
-                   "url":  "https://github.com/moffox"
-               },
+    "author":  "github-moffox@outlook.jp",
     "description":  "MofToolsが配布するUnity拡張の共通VCCリポジトリです。",
     "infoLink":  {
                      "url":  "https://github.com/moffox/mof-tools-vpm",

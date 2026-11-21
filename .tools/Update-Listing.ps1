@@ -65,8 +65,11 @@ if (Test-Path -LiteralPath $recordsRoot) {
     }
 }
 $source['packages'] = $packages
+$repositoryAuthor = [string]$source.author.email
+$source['author'] = $repositoryAuthor
 $docs = Join-Path $listingRoot 'docs'
 New-Item -ItemType Directory -Path $docs -Force | Out-Null
-[IO.File]::WriteAllText((Join-Path $docs 'index.json'), ($source | ConvertTo-Json -Depth 50) + "`n", $encoding)
+$indexJson = (($source | ConvertTo-Json -Depth 50) -replace "`r`n", "`n") + "`n"
+[IO.File]::WriteAllText((Join-Path $docs 'index.json'), $indexJson, $encoding)
 Write-Host "配布一覧を生成しました。パッケージ数: $($packages.Count)"
 Write-Host 'release-recordsとdocs/index.jsonをTortoiseGitで確認・Commit・Pushしてください。送信や公開は実行していません。'
